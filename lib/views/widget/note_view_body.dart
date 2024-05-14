@@ -11,8 +11,34 @@ class NoteViewBody extends StatelessWidget {
       child: Column(
         children: [
           CustomAppBar(),
+
+          Expanded(
+            child: NoteItem(),
+          ),
         ],
       ),
     );
+  } 
+}
+
+class NoteItem extends StatelessWidget {
+  const NoteItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.05),
+        borderRadius: BorderRadius.circular(16),
+      ),
+     child:const ListTile(
+        title:  Text('Note Title'),
+        subtitle: Text('Note Content'),
+        trailing:  Icon(Icons.delete),
+
+      )
+    );
   }
 }
+
+

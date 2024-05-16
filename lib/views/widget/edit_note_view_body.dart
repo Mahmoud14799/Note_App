@@ -12,11 +12,11 @@ class EditNoteViewBody extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: 40,
+            height: 50,
           ),
           CustomAppBar(title: 'Edit Note',icon: Icons.done),
           SizedBox(
-            height: 30,
+            height: 50,
           ),
           CustomTextField(hint: 'title'),
           SizedBox(

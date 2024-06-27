@@ -5,9 +5,13 @@ import 'package:note_pro/cubit/add_note_cubit/add_note_cubit.dart';
 import 'package:note_pro/models/note_model.dart';
 import 'package:note_pro/views/widget/custom_button_sheet.dart';
 import 'package:note_pro/views/widget/custom_text_fild.dart';
+import 'package:note_pro/views/widget/custtom_color_note.dart';
+import 'package:note_pro/views/widget/list_view_color.dart';
 
 class AddNoteForm extends StatefulWidget {
-  const AddNoteForm({super.key});
+  const AddNoteForm({
+    super.key,
+  });
 
   @override
   State<AddNoteForm> createState() => _AddNoteFormState();
@@ -19,6 +23,7 @@ AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
 String? title, subTitle;
 
 class _AddNoteFormState extends State<AddNoteForm> {
+  
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -44,6 +49,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
           hint: 'content',
           maxLine: 4,
         ),
+        const SizedBox(
+          height: 30,
+        ),
+        ListViewColor(),
         const SizedBox(
           height: 30,
         ),

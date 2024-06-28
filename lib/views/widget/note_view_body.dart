@@ -12,15 +12,7 @@ class NoteViewBody extends StatefulWidget {
 }
 
 class _NoteViewBodyState extends State<NoteViewBody> {
-  final List<Color> color = [
-    Colors.grey,
-    Colors.deepPurple,
-    Colors.pinkAccent,
-    Colors.lightGreen,
-    Colors.indigo,
-    Colors.lime,
-    Colors.orangeAccent
-  ];
+  
   @override
   void initState() {
     BlocProvider.of<NotesCubit>(context).fetchAllNotes();

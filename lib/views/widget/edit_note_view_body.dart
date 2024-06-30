@@ -15,6 +15,15 @@ class EditNoteViewBody extends StatefulWidget {
 }
 
 class _EditNoteViewBodyState extends State<EditNoteViewBody> {
+  late TextEditingController _titleController, _subTitleController;
+
+  @override
+  void initState() {
+    super.initState();
+    _titleController = TextEditingController(text: widget.note.title);
+    _subTitleController = TextEditingController(text: widget.note.subtitle);
+  }
+
   String? title, subTitle;
   @override
   Widget build(BuildContext context) {
@@ -34,9 +43,9 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
                 Navigator.pop(context);
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
-                    backgroundColor: Colors.green,
+                    backgroundColor: Colors.grey,
                     content: Text('تم تعديل الملاحظه بنجاح'),
-                    duration: Duration(seconds: 4),
+                    duration: Duration(seconds: 3),
                   ),
                 );
               },
@@ -46,21 +55,28 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             height: 50,
           ),
           CustomTextField(
+              controller: _titleController,
               onChanged: (value) {
                 title = value;
               },
-              hint: widget.note.title),
+              hint: 'title'),
           const SizedBox(
             height: 15,
           ),
           CustomTextField(
+            controller: _subTitleController,
             onChanged: (value) {
               subTitle = value;
             },
-            hint: widget.note.subtitle,
+            hint: 'content',
             maxLine: 4,
           ),
-          EditNoteColorList(note:  widget.note,),
+          const SizedBox(
+            height: 40,
+          ),
+          EditNoteColorList(
+            note: widget.note,
+          ),
         ],
       ),
     );

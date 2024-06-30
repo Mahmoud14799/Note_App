@@ -3,7 +3,8 @@ import 'package:flutter/widgets.dart';
 import 'package:note_pro/views/widget/custom_search_icon.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key, required this.title, required this.icon, this.onPressed});
+  const CustomAppBar(
+      {super.key, required this.title, required this.icon, this.onPressed});
   final String title;
   final IconData icon;
   final void Function()? onPressed;
@@ -14,7 +15,7 @@ class CustomAppBar extends StatelessWidget {
       children: [
         Text(title, style: const TextStyle(fontSize: 32)),
         CustomSearchIcon(
-        onPressed:onPressed ,
+          onPressed: onPressed,
           icon: icon,
         ),
       ],

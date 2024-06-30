@@ -12,8 +12,6 @@ class ListViewColor extends StatefulWidget {
 }
 
 class _ListViewColorState extends State<ListViewColor> {
-  
-
   int currantIndex = 0;
 
   @override
